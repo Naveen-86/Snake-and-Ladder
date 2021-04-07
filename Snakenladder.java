@@ -20,6 +20,8 @@ import java.util.*;
        Random opt = new Random();
        int position = opt.nextInt(3);
 
+       int previousposition = player1;
+
        switch(position){
 
                    case 0:
@@ -35,10 +37,16 @@ import java.util.*;
                              System.out.println(" Hiss! you are beaten by snake " + diceroll + " steps move backward ");
                              break;
          }
-           if(player1 < 0){
-                 player1 = Startpoint;
-        }
+           if(player1 > 100){
+				player1 = previousposition;
+			}
+			if(player1 < 0){
+				player1 = player1;
+			}
+			if(player1 == 100){
+				break;
+			}
       }
-     System.out.println("you win! Game over");
+     System.out.println("you win! Reached 100, Game over");
   }
 }
