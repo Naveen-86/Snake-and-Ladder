@@ -8,12 +8,14 @@ import java.util.*;
 
        int Startpoint = 0;
        int player1 = Startpoint;
+       int dicecount = 0;
 
 
        while(player1 <= 100){
 
        Random rand = new Random();
        int diceroll = rand.nextInt(6)+1;
+       dicecount++;
 
        System.out.println(diceroll);
 
@@ -46,7 +48,9 @@ import java.util.*;
 			if(player1 == 100){
 				break;
 			}
+         System.out.println("You are in " + player1 + " position ");
       }
-     System.out.println("you win! Reached 100, Game over");
+     System.out.println("you have rolled the dice for : " + dicecount + " times");
+     System.out.println("You have reached 100,you win");
   }
 }
