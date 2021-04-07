@@ -8,6 +8,10 @@ import java.util.*;
 
        int Startpoint = 0;
        int player1 = Startpoint;
+
+
+       while(player1 <= 100){
+
        Random rand = new Random();
        int diceroll = rand.nextInt(6)+1;
 
@@ -31,6 +35,10 @@ import java.util.*;
                              System.out.println(" Hiss! you are beaten by snake " + diceroll + " steps move backward ");
                              break;
          }
-     System.out.println("Player position: " + player1);
+           if(player1 < 0){
+                 player1 = Startpoint;
+        }
+      }
+     System.out.println("you win! Game over");
   }
 }
